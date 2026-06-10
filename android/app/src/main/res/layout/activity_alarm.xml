@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FF111827"
+    android:padding="32dp">
+
+    <!-- Current Time -->
+    <TextClock
+        android:id="@+id/alarmClock"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="120dp"
+        android:format12Hour="hh:mm"
+        android:format24Hour="HH:mm"
+        android:textColor="#FFFFFFFF"
+        android:textSize="80sp"
+        android:fontFamily="sans-serif-light" />
+
+    <!-- Seconds -->
+    <TextClock
+        android:id="@+id/alarmSeconds"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/alarmClock"
+        android:layout_centerHorizontal="true"
+        android:format12Hour="ss"
+        android:format24Hour="ss"
+        android:textColor="#80FFFFFF"
+        android:textSize="28sp"
+        android:fontFamily="sans-serif-light" />
+
+    <!-- AM/PM indicator -->
+    <TextClock
+        android:id="@+id/alarmAmPm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/alarmSeconds"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="4dp"
+        android:format12Hour="a"
+        android:format24Hour=""
+        android:textColor="#80FFFFFF"
+        android:textSize="20sp"
+        android:fontFamily="sans-serif-medium" />
+
+    <!-- Alarm Label -->
+    <TextView
+        android:id="@+id/alarmLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/alarmAmPm"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="24dp"
+        android:text="Alarm"
+        android:textColor="#FF60A5FA"
+        android:textSize="24sp"
+        android:fontFamily="sans-serif-medium" />
+
+    <!-- Alarm ringing indicator -->
+    <TextView
+        android:id="@+id/alarmRingingText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/alarmLabel"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="8dp"
+        android:text="⏰ Alarm Ringing"
+        android:textColor="#FFFBBF24"
+        android:textSize="16sp"
+        android:fontFamily="sans-serif" />
+
+    <!-- Button Container -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="64dp"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <!-- Snooze Button -->
+        <Button
+            android:id="@+id/btnSnooze"
+            android:layout_width="0dp"
+            android:layout_height="64dp"
+            android:layout_weight="1"
+            android:layout_marginEnd="12dp"
+            android:text="SNOOZE"
+            android:textColor="#FFFFFFFF"
+            android:textSize="16sp"
+            android:fontFamily="sans-serif-medium"
+            android:background="@drawable/btn_snooze_bg"
+            android:elevation="4dp" />
+
+        <!-- Dismiss Button -->
+        <Button
+            android:id="@+id/btnDismiss"
+            android:layout_width="0dp"
+            android:layout_height="64dp"
+            android:layout_weight="1"
+            android:layout_marginStart="12dp"
+            android:text="DISMISS"
+            android:textColor="#FFFFFFFF"
+            android:textSize="16sp"
+            android:fontFamily="sans-serif-medium"
+            android:background="@drawable/btn_dismiss_bg"
+            android:elevation="4dp" />
+
+    </LinearLayout>
+
+</RelativeLayout>
