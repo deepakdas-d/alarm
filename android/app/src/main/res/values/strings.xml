@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="alarm_trigger_permission_desc">Permission to trigger alarm broadcasts. Only granted to apps signed with the same certificate.</string>
+</resources>

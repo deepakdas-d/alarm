@@ -11,16 +11,23 @@
     <uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS" />
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
 
-    <!-- Define a custom signature-level permission to protect our components -->
+    <!-- Define a custom signature-level permission to protect our components.
+         Only apps signed with the same key can hold this permission. -->
     <permission
         android:name="${applicationId}.permission.ALARM_TRIGGER"
+        android:label="Alarm Trigger Permission"
+        android:description="@string/alarm_trigger_permission_desc"
         android:protectionLevel="signature" />
     <uses-permission android:name="${applicationId}.permission.ALARM_TRIGGER" />
 
     <application
         android:label="alarm"
         android:name="${applicationName}"
-        android:icon="@mipmap/ic_launcher">
+        android:icon="@mipmap/ic_launcher"
+        android:allowBackup="false"
+        android:fullBackupContent="false"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:usesCleartextTraffic="false">
         <activity
             android:name=".MainActivity"
             android:exported="true"
@@ -66,7 +73,8 @@
 
         <receiver
             android:name=".receivers.BootReceiver"
-            android:exported="true">
+            android:exported="true"
+            android:directBootAware="true">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
                 <action android:name="android.intent.action.LOCKED_BOOT_COMPLETED" />
